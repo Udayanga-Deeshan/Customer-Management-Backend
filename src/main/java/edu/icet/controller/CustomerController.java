@@ -36,4 +36,11 @@ public class CustomerController {
     public  void updateCustomer(@RequestBody Customer customer){
         service.updateCustomer(customer);
     }
+
+    @GetMapping("/search-by-id/{id}")
+    public Customer searchById( @PathVariable Integer id){
+       return service.searchById(id);
+    }
+
+
 }
