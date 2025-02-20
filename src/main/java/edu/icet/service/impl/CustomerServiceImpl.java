@@ -53,5 +53,16 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
+    @Override
+    public List<Customer> searchByname(String name) {
+        List<CustomerEntity> customerEntityList = repository.findByName(name);
+        ArrayList<Customer> customerList = new ArrayList<>();
+        for(CustomerEntity customerEntity: customerEntityList){
+            customerList.add(mapper.map(customerEntity,Customer.class));
+        }
+
+        return  customerList;
+    }
+
 
 }
