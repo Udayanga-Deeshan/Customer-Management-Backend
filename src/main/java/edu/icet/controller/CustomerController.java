@@ -3,10 +3,9 @@ package edu.icet.controller;
 import edu.icet.dto.Customer;
 import edu.icet.service.CustomerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
@@ -19,5 +18,10 @@ public class CustomerController {
         service.addCustomer(customer);
         System.out.println(customer);
 
+    }
+
+    @GetMapping("/get-all")
+    public List<Customer> getAll(){
+        return  service.getAll();
     }
 }
