@@ -31,4 +31,9 @@ public class CustomerController {
         service.deleteCustomer(id);
 
     }
+
+    @PutMapping("/update-customer")
+    public  void updateCustomer(@RequestBody Customer customer){
+        service.updateCustomer(customer);
+    }
 }
