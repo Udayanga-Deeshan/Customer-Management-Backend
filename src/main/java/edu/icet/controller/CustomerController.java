@@ -24,4 +24,11 @@ public class CustomerController {
     public List<Customer> getAll(){
         return  service.getAll();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCustomer( @PathVariable Integer id){
+        System.out.println(id);
+        service.deleteCustomer(id);
+
+    }
 }
